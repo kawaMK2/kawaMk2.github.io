@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'penna';
+    src: url('../fonts/penna.otf');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: dimgray;
+    color: dimgray;
+    font-family:"筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}
+
+a {
+    color: dimgray;
+}
+
+.golden-spiral {
+    width: auto;
+    position: fixed;
+}
+
+.golden-section {
+    position: absolute;
+    left: -100%;
+    box-sizing: border-box;
+    transition-property: border, border-radius;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+    border: 2px solid dimgray;
+    background-size: 200%;
+    overflow: hidden;
+}
+
+.golden-spiral-overlay {
+    z-index: 2;
+    display: none;
+}
+
+.circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% 0% 0% 0% / 100% 0% 0% 0%;
+    /*background-color: #c6b29a;*/
+}
+
+.golden-section:hover {
+    border-radius: 5%;
+    border: 2px solid dimgray;
+}
+
+.active {
+    border: 2px solid dimgray;
+}
+
+.active:hover {
+    border-radius: 0%;
+    border: 2px solid dimgray;
+}
+
+.message {
+    position: relative;
+    color: black;
+    padding-top: 3vh;
+    padding-left: 1vh;
+    /*padding-top: 4vh;*/
+    font-size: 1vw;
+    line-height: 1.8em;
+}
+
+.name {
+    /*font-family:"筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;*/
+    color: black;
+    position: relative;
+    writing-mode:   vertical-lr;
+    /*padding-left: 33%;*/
+    top: 20vh;
+    left: -2vh;
+    text-align: left;
+    font-size: 6vw;
+}
+
+.page-title {
+    position: relative;
+    left: 3vh;
+    top: 3vh;
+    font-family: "penna";
+    font-size: 4vh;
+    color: white;
+}
+
+.page-footer {
+    position: absolute;
+    font-size: 1vw;
+    left: 3vh;
+    bottom: 3vh;
+}
+
+.container1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-areas:
+            "l-t c-tb r-t"
+            "l-b c-tb r-b";
+}
+
+.container1-subtitle {
+    position: relative;
+    font-family: "penna";
+    font-size: 8vh;
+    color: #bf2932;
+    left: 1vh;
+    top: 3vh;
+}
+
+.container2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30% 50% 20%;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+            "l-t r-t"
+            "l-c r-c"
+            "l-b r-b";
+}
+
+.container2-subtitle {
+    position: absolute;
+    font-family: "penna";
+    font-size: 10vh;
+    color: #bf2932;
+    left: 10vh;
+    bottom: 2vh;
+}
+
+.container2-subtitle2 {
+    position: absolute;
+    font-family: "penna";
+    font-size: 6vh;
+    color: #bf2932;
+    right: 0vh;
+    bottom: 0vh;
+}
+
+.container2-subtitle3 {
+    position: absolute;
+    font-family: "penna";
+    font-size: 2.5vh;
+    color: #bf2932;
+    right: 0vh;
+    top: 0vh;
+}
+
+.container2-img {
+    position: relative;
+    height: 100%;
+    left: 10vh;
+}
+
+.l-t {
+    grid-area: l-t;
+    position: relative;
+}
+
+.l-c {
+    grid-area: l-c;
+    position: relative;
+}
+
+.c-c {
+    grid-area: c-c;
+    position: relative;
+}
+
+.r-c {
+    grid-area: r-c;
+    position: relative;
+}
+
+.l-b {
+    grid-area: l-b;
+    position: relative;
+}
+
+.c-tb {
+    grid-area: c-tb;
+    position: relative;
+}
+
+.c-t {
+    grid-area: c-t;
+    position: relative;
+}
+
+.c-b {
+    grid-area: c-b;
+    position: relative;
+}
+
+.r-t {
+    grid-area: r-t;
+    position: relative;
+}
+
+.r-b {
+    grid-area: r-b;
+    position: relative;
+}
