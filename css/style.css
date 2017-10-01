@@ -2,6 +2,10 @@
     font-family: 'penna';
     src: url('../fonts/penna.otf');
 }
+@font-face {
+    font-family: 'aileron';
+    src: url('../fonts/Aileron-Thin.otf');
+}
 
 body {
     padding: 0;
@@ -65,7 +69,7 @@ a {
     padding-top: 3vh;
     padding-left: 1vh;
     /*padding-top: 4vh;*/
-    font-size: 1vw;
+    font-size: 1vmax;
     line-height: 1.8em;
 }
 
@@ -78,7 +82,7 @@ a {
     top: 20vh;
     left: -2vh;
     text-align: left;
-    font-size: 6vw;
+    font-size: 6vmax;
 }
 
 .page-title {
@@ -86,13 +90,13 @@ a {
     left: 3vh;
     top: 3vh;
     font-family: "penna";
-    font-size: 4vh;
+    font-size: 4vmax;
     color: white;
 }
 
 .page-footer {
     position: absolute;
-    font-size: 1vw;
+    font-size: 1vmax;
     left: 3vh;
     bottom: 3vh;
 }
@@ -112,7 +116,7 @@ a {
 .container1-subtitle {
     position: relative;
     font-family: "penna";
-    font-size: 8vh;
+    font-size: 8vmin;
     color: #bf2932;
     left: 1vh;
     top: 3vh;
@@ -134,7 +138,7 @@ a {
 .container2-subtitle {
     position: absolute;
     font-family: "penna";
-    font-size: 10vh;
+    font-size: 8vmin;
     color: #bf2932;
     left: 10vh;
     bottom: 2vh;
@@ -143,19 +147,45 @@ a {
 .container2-subtitle2 {
     position: absolute;
     font-family: "penna";
-    font-size: 6vh;
+    font-size: 6vmin;
     color: #bf2932;
     right: 0vh;
     bottom: 0vh;
 }
 
 .container2-subtitle3 {
-    position: absolute;
+    position: relative;
     font-family: "penna";
-    font-size: 2.5vh;
+    font-size: 2.5vmin;
     color: #bf2932;
     right: 0vh;
     top: 0vh;
+}
+.container2-icon-line {
+    position: relative;
+    height: 15%;
+    left: 10vh;
+    padding-bottom: 1vh;
+}
+
+.container2-icon {
+    position: absolute;
+    border-radius: 50%;
+    height: 80%;
+    background-color: #19a99d;
+}
+
+.container2-icon-title {
+    position: absolute;
+    left: 8vmin;
+    /*top: 0;*/
+    bottom: 3vmin;
+    margin: auto;
+    font-family: "aileron";
+    /*vertical-align: bottom;*/
+    align-items: center;
+    font-size: 3vmin;
+    color: #41210D;
 }
 
 .container2-img {
