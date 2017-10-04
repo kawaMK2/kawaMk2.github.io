@@ -1,23 +1,21 @@
+/* YOUR CUSTOM STYLES */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 @font-face {
     font-family: 'penna';
-    src: url('../fonts/penna.otf');
+    src: url('../font/penna.otf');
 }
 @font-face {
     font-family: 'aileron';
-    src: url('../fonts/Aileron-Thin.otf');
+    src: url('../font/Aileron-Thin.otf');
 }
 
 body {
-    padding: 0;
-    margin: 0;
     background-color: dimgray;
     color: dimgray;
-    /*font-family:"筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;*/
-    font-family: "aileron";
-}
-
-a {
-    color: dimgray;
+    /*font-family:"aileron", "筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;*/
+    /*font-family: "aileron";*/
+    font-family: 'aileron', 'Noto Sans JP', sans-serif;
+    font-size: 100%;
 }
 
 .golden-spiral {
@@ -37,16 +35,12 @@ a {
     overflow: hidden;
 }
 
-.golden-spiral-overlay {
-    z-index: 2;
-    display: none;
-}
-
-.circle {
+.golden-section-circle {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 100% 0% 0% 0% / 100% 0% 0% 0%;
+    border-radius: 100% 0 0 0 / 100% 0 0 0;
+    overflow: hidden;
     /*background-color: #c6b29a;*/
 }
 
@@ -64,45 +58,40 @@ a {
     border: 2px solid dimgray;
 }
 
-.message {
-    position: relative;
+.section-myname {
+    font-family:"aileron", "筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
     color: black;
-    padding-top: 3vh;
-    padding-left: 1vh;
-    /*padding-top: 4vh;*/
-    font-size: 1vmax;
-    line-height: 1.8em;
-}
-
-.name {
-    font-family:"筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
-    color: black;
-    position: relative;
+    position: absolute;
     writing-mode:   vertical-lr;
     /*padding-left: 33%;*/
     top: 20vh;
-    left: -2vh;
-    text-align: left;
+    right: 0;
+    /*text-align: left;*/
     font-size: 6vmax;
 }
 
-.page-title {
-    position: relative;
-    left: 3vh;
-    top: 3vh;
+.section-title {
+    position: absolute;
     font-family: "penna";
-    font-size: 4vmax;
+    /*font-size: 4vmax;*/
     color: white;
 }
 
-.page-footer {
+.section-sub-title {
+    font-family: "penna";
+    font-size: 8vmin;
+    color: #bf2932;
+}
+
+.section-footer {
     position: absolute;
+    font-family: "aileron";
     font-size: 1vmax;
     left: 3vh;
     bottom: 3vh;
 }
 
-.container1 {
+.section-container1 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -114,85 +103,17 @@ a {
             "l-b c-tb r-b";
 }
 
-.container1-subtitle {
-    position: relative;
-    font-family: "penna";
-    font-size: 8vmin;
-    color: #bf2932;
-    left: 1vh;
-    top: 3vh;
-}
-
-.container2 {
+.section-container2 {
     position: absolute;
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 30% 50% 20%;
+    grid-template-rows: 30% 40% 30%;
     grid-template-columns: 40% 60%;
     grid-template-areas:
             "l-t r-t"
             "l-c r-c"
             "l-b r-b";
-}
-
-.container2-subtitle {
-    position: absolute;
-    font-family: "penna";
-    font-size: 8vmin;
-    color: #bf2932;
-    left: 10vh;
-    bottom: 2vh;
-}
-
-.container2-subtitle2 {
-    position: absolute;
-    font-family: "penna";
-    font-size: 6vmin;
-    color: #bf2932;
-    right: 0vh;
-    bottom: 0vh;
-}
-
-.container2-subtitle3 {
-    position: absolute;
-    font-family: "penna";
-    font-size: 2.5vmin;
-    color: #bf2932;
-    right: 0vh;
-    top: 0vh;
-}
-.container2-icon-line {
-    position: relative;
-    height: 15%;
-    left: 10vh;
-    padding-bottom: 1vh;
-}
-
-.container2-icon {
-    position: absolute;
-    border-radius: 50%;
-    height: 80%;
-    background-color: #19a99d;
-}
-
-.container2-icon-title {
-    position: absolute;
-    left: 8vmin;
-    /*top: 0;*/
-    bottom: 3vmin;
-    margin: auto;
-    font-family: "aileron";
-    /*vertical-align: bottom;*/
-    align-items: center;
-    font-size: 3vmin;
-    color: #41210D;
-}
-
-.container2-img {
-    position: relative;
-    height: 100%;
-    left: 10vh;
 }
 
 .l-t {
@@ -244,3 +165,9 @@ a {
     grid-area: r-b;
     position: relative;
 }
+
+.r-tb {
+    grid-area: r-tb;
+    position: relative;
+}
+
