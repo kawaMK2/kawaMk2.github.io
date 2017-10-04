@@ -12,8 +12,6 @@
 body {
     background-color: dimgray;
     color: dimgray;
-    /*font-family:"aileron", "筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;*/
-    /*font-family: "aileron";*/
     font-family: 'aileron', 'Noto Sans JP', sans-serif;
     font-size: 100%;
 }
@@ -96,7 +94,7 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 30% 70%;
     grid-template-columns: 40% 20% 40%;
     grid-template-areas:
             "l-t c-tb r-t"
@@ -108,8 +106,8 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 30% 40% 30%;
-    grid-template-columns: 40% 60%;
+    grid-template-rows: 35% 30% 35%;
+    grid-template-columns: 50% 50%;
     grid-template-areas:
             "l-t r-t"
             "l-c r-c"
