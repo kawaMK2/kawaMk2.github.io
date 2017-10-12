@@ -56,6 +56,39 @@ body {
     border: 2px solid dimgray;
 }
 
+.launch-image {
+    position: absolute;
+    left: 65%;
+    top: 20%;
+    height: 45%;
+}
+
+li {
+    /*display: inline;*/
+    padding: 5px;
+    text-align: left;
+    list-style: none;
+}
+
+a.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+}
+
+.canvas3D {
+    position: absolute;
+    /*background-color: #FFFFFF;*/
+    width: 100%;
+    height: 100%;
+    /*z-index: -1;*/
+}
+
 .section-myname {
     font-family:"aileron", "筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
     color: black;
@@ -106,12 +139,12 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 35% 30% 35%;
-    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 45% 30%;
+    grid-template-columns: 45% 55%;
     grid-template-areas:
             "l-t r-t"
-            "l-c r-c"
-            "l-b r-b";
+            "l-c r-cb"
+            "l-b r-cb";
 }
 
 .l-t {
@@ -166,6 +199,11 @@ body {
 
 .r-tb {
     grid-area: r-tb;
+    position: relative;
+}
+
+.r-cb {
+    grid-area: r-cb;
     position: relative;
 }
 

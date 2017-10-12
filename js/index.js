@@ -2,8 +2,11 @@ $(function () {
 
     var win = $(window);
     var sections = $('.golden-section');
+    // var circles = $('.golden-section-circle');
     var spiral = $('.golden-spiral');
     var active = $('.active');
+
+    // var backgroundColors = sections.css('background-color');
 
     var width;
     var height;
@@ -118,6 +121,12 @@ $(function () {
             //         'border-radius': '0%'
             //     })
             // });
+            // sections.css({
+            //     'background-color': sections.eq(currentSection).css("background-color")
+            // });
+            // sections.find('.golden-section-circle').css({
+            //     'background-color': circles.eq(currentSection).css("background-color")
+            // });
         })
     }
 
@@ -191,6 +200,7 @@ $(function () {
             rotateRight = -1;
         }
         buildSpiral();
+        onWindowResize();   // Three.js用リサイズハンドラも呼んでおく
     }
 
     function trimRotation() {   // -1500 < rotation < 500
@@ -208,3 +218,84 @@ $(function () {
     }
 
 });
+var container, stats;
+var camera, scene, renderer, obj;
+// var windowHalfX = window.innerWidth / 2;
+// var windowHalfY = window.innerHeight / 2;
+var canvasWidth = document.getElementById("canvas3D").offsetWidth;
+var canvasHeight = document.getElementById("canvas3D").offsetHeight;
+var windowHalfX = canvasWidth / 2;
+var windowHalfY = canvasHeight / 2;
+init();
+animate();
+function init() {
+    // container = document.createElement( 'div' );
+    container = document.getElementById("canvas3D");
+    // document.body.appendChild( container );
+    camera = new THREE.PerspectiveCamera( 45, canvasWidth / canvasHeight, 1, 2000 );
+    camera.position.z = 250;
+    // scene
+    scene = new THREE.Scene();
+    // var ambient = new THREE.AmbientLight( 0x444444 );
+    // scene.add( ambient );
+    // var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+    // directionalLight.position.set( 0, 0, 1 ).normalize();
+    scene.add( new THREE.AmbientLight(0xffffff) );
+    // model
+    var onProgress = function ( xhr ) {
+        if ( xhr.lengthComputable ) {
+            var percentComplete = xhr.loaded / xhr.total * 100;
+            console.log( Math.round(percentComplete, 2) + '% downloaded' );
+        }
+    };
+    var onError = function ( xhr ) { };
+    THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath( 'obj/' );
+    mtlLoader.load( 'bench_1.mtl', function( materials ) {
+        materials.preload();
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath( 'obj/' );
+        objLoader.load( 'bench_1.obj', function ( object ) {
+            object.position.y = - 95;
+            object.scale.set(100, 100, 100);
+            obj = object
+            scene.add( obj );
+        }, onProgress, onError );
+    });
+    //
+    renderer = new THREE.WebGLRenderer({ alpha: true ,antialias:true});
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setClearColor( new THREE.Color(0xffffff),0.0);
+    renderer.setSize( canvasWidth, canvasHeight );
+    renderer.domElement.style.position = 'relative';
+    // renderer.domElement.style.top = 0;
+    container.appendChild( renderer.domElement );
+    // render();
+    // document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+    //
+    // window.addEventListener( 'resize', onWindowResize, false );
+    // $(window).on()
+}
+function onWindowResize() {
+    canvasWidth = document.getElementById("canvas3D").offsetWidth;
+    canvasHeight = document.getElementById("canvas3D").offsetHeight;
+    windowHalfX = canvasWidth / 2;
+    windowHalfY = canvasHeight / 2;
+    camera.aspect = canvasWidth / canvasHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( canvasWidth, canvasHeight );
+}
+//
+function animate() {
+    // obj.rotation.z++;
+    requestAnimationFrame( animate );
+    render();
+}
+function render() {
+    // camera.position.x += ( mouseX - camera.position.x ) * .05;
+    // camera.position.y += ( - mouseY - camera.position.y ) * .05;
+    // camera.lookAt( scene.position );
+    renderer.render( scene, camera );
+}
