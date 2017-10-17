@@ -12,7 +12,7 @@
 body {
     background-color: dimgray;
     color: dimgray;
-    font-family: 'aileron', 'Noto Sans JP', sans-serif;
+    /*font-family: 'aileron', 'Noto Sans JP', sans-serif;*/
     font-size: 100%;
 }
 
@@ -90,7 +90,7 @@ a.fa {
 }
 
 .section-myname {
-    font-family:"aileron", "筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+    font-family: "aileron", "筑紫A丸ゴシック レギュラー", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
     color: black;
     position: absolute;
     writing-mode:   vertical-lr;
@@ -205,5 +205,12 @@ a.fa {
 .r-cb {
     grid-area: r-cb;
     position: relative;
+}
+
+.background {
+    position: absolute;
+    padding: 10vw;
+    right: 10vw;
+    height: 100vh;
 }
 
